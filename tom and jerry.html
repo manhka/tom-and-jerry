@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tom and jerry</title>
+</head>
+<body>
+
+</body>
+</html>
+<script> class animal {
+    constructor(name, weight, speed, said) {
+        this.name = name;
+        this.weight = weight;
+        this.speed = speed;
+        this.said = said;
+    }
+
+    setName(name) {
+        this.name = name
+    }
+
+    getName() {
+        return this.name
+    }
+
+    setWeight(weight) {
+        this.weight = weight
+    }
+
+    getWeight() {
+        return this.weight
+    }
+
+    setSpeed(speed) {
+        this.speed = speed
+    }
+
+    getSpeed() {
+        return this.speed
+    }
+
+    setSaid(said) {
+        this.said = said
+    }
+
+    getSaid() {
+        return this.said
+    }
+}
+ class Mouse extends animal{
+
+     constructor(name, weight, speed, said,status) {
+         super(name, weight, speed, said);
+         this.status=status
+     }
+     setStatus(status){
+         this.status=status
+     }
+     getStatus(){
+         if (this.status){
+             console.log('MOUSE said: i died , eat me ok man')
+         }
+         else{
+             console.log('MOUSE said:im living an amazing live')
+         }
+         return this.status
+     }
+ }
+ class Cat extends animal{
+
+     constructor(name, weight, speed, said) {
+         super(name, weight, speed, said);
+     }
+     catchMouse(mouse){
+         if(super.getSpeed()>mouse.getSpeed()){
+             console.log('CAT said :i catched you babe')
+             mouse.setStatus(true)
+         }else{
+             console.log('CAT said: you are so fast , i cant catch you')
+         }
+     }
+     eatMouse(mouse){
+         if(mouse.getStatus()){
+             super.setWeight(super.getWeight()+mouse.getWeight())
+             console.log('CAT said: this is my weight after eatting mouse',this.getWeight())
+         }else{
+             console.log('CAT said: not thing to eat')
+         }
+     }
+ }
+ let mouse1= new Mouse('jerry',20,40,'chit chit',false)
+  let cat1=new Cat('Tom',21,41,'meo meos')
+let mouse2 =new Mouse('mick',20,42,'au au',false)
+</script>
